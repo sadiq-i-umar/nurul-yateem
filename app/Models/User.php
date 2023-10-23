@@ -44,4 +44,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    static public function getGuidian () {
+
+        return self::select('users.*')
+                    ->where('user_type','=',3)
+                    ->orderBy('id', 'asc')
+                    ->get();
+    }
+    static public function getSponsor () {
+
+        return self::select('users.*')
+                    ->where('user_type','=',2)
+                    ->orderBy('id', 'asc')
+                    ->get();
+    }
 }

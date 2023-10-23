@@ -19,7 +19,8 @@ class AuthController extends Controller
             "firstname"=> "required",
             "lastname"=> "required",
             "email"=> "required|email",
-            "password"=> "required|confirmed"
+            "password"=> "required|confirmed",
+            "user_type"=> "required"
             ])->validate();
 
             User::create([
@@ -27,7 +28,7 @@ class AuthController extends Controller
                 'lastname' => $request->lastname,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'level' => 'Admin'
+                'user_type' =>  $request->user_type,
             ]);
             return redirect()->route('login')->with('success','');
     }

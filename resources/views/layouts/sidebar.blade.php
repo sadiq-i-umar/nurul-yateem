@@ -25,13 +25,13 @@
 
 
   <li class="nav-item">
-    <a class="nav-link" href="{{ route('guidian') }}">
+    <a class="nav-link" href="{{ route('admin/guidian') }}">
       <i class="fas fa-fw fa-folder"></i>
       <span>Guidian List</span></a>
   </li>
   
   <li class="nav-item">
-    <a class="nav-link"  href="{{ route('sponsor') }}">
+    <a class="nav-link"  href="{{ route('admin/sponsor') }}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Sponsors Lists</span></a>
   </li>
@@ -57,7 +57,7 @@
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
     <li class="nav-item">
-      <a class="nav-link" href="/profile">
+      <a class="nav-link" href="">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>News</span></a>
     </li>
@@ -96,6 +96,8 @@
     <div class="sidebar-brand-text mx-2">Nurul-Yateem <sup></sup></div>
   </a>
 
+
+
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
   
@@ -107,6 +109,12 @@
       <span>Sponsor Dashboard</span></a>
   </li>
   
+  <li class="nav-item">
+    <a class="nav-link"  href="{{ route('sponsor') }}">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Sponsors Lists</span></a>
+  </li>
+
   
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">
@@ -152,6 +160,13 @@
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Guidian Dashboard</span></a>
   </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="{{ route('guidian') }}">
+      <i class="fas fa-fw fa-folder"></i>
+      <span>Guidian List</span></a>
+  </li>
+  
 
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">

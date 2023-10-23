@@ -30,7 +30,7 @@
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="col-xl-0 col-lg-12 col-md-1">
 
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
@@ -96,6 +96,15 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                        <div class="col-sm-10">
+                                            <select name="user_type" class="form-control mr-10" aria-label="Default select example">
+                                                <option selected>----ACCOUNT TYPE----</option>
+                                                <option  value="2">Sponsor</option>
+                                                <option value="3">Guidian</option>
+                                              </select>
+                                        </div>
+                                    </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">Register</button>
                                     
                                        
