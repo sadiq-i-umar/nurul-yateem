@@ -50,6 +50,7 @@ Route::middleware('admin')->group(function () {
     Route::get('admin/guidian', [App\Http\Controllers\AdminController::class,'guidianlist'])->name('admin/guidian'); 
     Route::get('admin/guidian/create', [App\Http\Controllers\AdminController::class,'guidiancreate'])->name('admin/guidian/create'); 
     Route::get('admin/sponsor', [App\Http\Controllers\AdminController::class,'sponsorlist'])->name('admin/sponsor'); 
+    Route::get('admin/guidian/profile', [App\Http\Controllers\AdminController::class,'profile'])->name('admin/guidian/profile'); 
     Route::get('admin/sponsor/create', [App\Http\Controllers\AdminController::class,'sponsorcreate'])->name('admin/sponsor/create');
     Route::post('registersave', [App\Http\Controllers\AdminController::class,'registerSave'])->name('guidian.register.save');
   
@@ -71,7 +72,9 @@ Route::middleware('sponsor')->group(function () {
 Route::middleware('guidian')->group(function () {
     Route::get('guidian/dashboard', [App\Http\Controllers\DashboardController::class,'dashboard'])->name('guidian/dashboard'); 
     Route::get('/guidian', [App\Http\Controllers\GuidianController::class,'index'])->name('guidian'); 
-    Route::get('/guidian/create', [App\Http\Controllers\GuidianController::class,'create'])->name('create'); 
+    Route::get('guidian/create', [App\Http\Controllers\GuidianController::class,'create'])->name('guidian/create'); 
+    Route::get('guidian/profile', [App\Http\Controllers\GuidianController::class,'profile'])->name('guidian/profile'); 
+    Route::post('saveregister', [App\Http\Controllers\GuidianController::class,'registerSave'])->name('save.guidian.register');
     // Route::get('/profile', [App\Http\Controllers\AuthController::class,'profile'])->name('profile'); 
     // Route::get('/settings', [App\Http\Controllers\AuthController::class,'settings'])->name('settings'); 
     // Route::get('/guidian', [App\Http\Controllers\GuidianController::class,'index'])->name('guidian'); 

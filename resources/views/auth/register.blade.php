@@ -23,8 +23,8 @@
 
 </head>
 
-<body class="bg-gradient-primary">
-
+<body class="">
+{{-- 
     <div class="container">
 
         <!-- Outer Row -->
@@ -126,4 +126,132 @@
 
         </div>
 
-    </div>
+    </div> --}}
+
+
+
+    <section class="vh-100" style="background-color: ;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+              <div class="card" style="border-radius: 1rem;">
+                <div class="row g-0">
+                
+                  <div class="col-md-12 col-lg-12 d-flex align-items-center">
+                    <div class="card-body p-4 p-lg-5 text-black">
+      
+                      <form  action="{{ route('register.save')}}" method="POST" class="user">
+
+                        @csrf
+
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error )
+                                    <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
+
+                        </div>
+                            
+                        @endif
+      
+                        <div class="d-flex align-items-center mb-3 pb-1">
+                          <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                          <span class="h1 fw-bold mb-0">Nurul Yateem</span>
+                        </div>
+      
+                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+      
+                        <div class="form-outline mb-4">
+                          <label class="form-label" for="form2Example17">First Name</label>
+                            <input type="text" name="firstname" id="form2Example17" class="form-control form-control-lg @error('firstname')is-invalid @enderror" />
+                           
+                            @error('firstname')
+                              <span class="invalid-feedback">{{$message}}</span>
+                              @enderror
+                          </div>
+                          <div class="form-outline mb-4">
+                            <label class="form-label" for="form2Example17">Last Name</label>
+                            <input type="text" name="lastname" id="form2Example17" class="form-control form-control-lg @error('lastname')is-invalid @enderror" />
+                            
+                            @error('lastname')
+                              <span class="invalid-feedback">{{$message}}</span>
+                              @enderror
+                          </div>
+
+                        <div class="form-outline mb-4">
+                          <label class="form-label" for="form2Example17">Email address</label>
+                          <input type="email" name="email" id="form2Example17" class="form-control mb-4 form-control-lg @error('email')is-invalid @enderror" />
+                       
+                          @error('email')
+                            <span class="invalid-feedback">{{$message}}</span>
+                            @enderror
+                        </div>
+      
+                        <div class="form-outline mb-4">
+                          <label class="form-label" for="form2Example27">Password</label>
+                          <input type="password" name="password" id="form2Example27" class="form-control mb-4 form-control-lg @error('password')is-invalid @enderror" />
+                    
+                          @error('password')
+                          <span class="invalid-feedback">{{$message}}</span>
+                          @enderror
+                        </div>
+
+                        <div class="form-outline mb-4">
+                          <label class="form-label" for="form2Example27">Confirm Password</label>
+                          <input type="password" name="password_confirmation" id="form2Example27" class="form-control mb-4 form-control-lg @error('password_confirmation')is-invalid @enderror" />
+                    
+                          @error('password_confirmation')
+                          <span class="invalid-feedback">{{$message}}</span>
+                          @enderror
+                        </div>
+      
+                 
+
+                          <div class="form-outline mt-3 mb-4">
+                             <label class="form-label" for="form2Example27">Account Type</label>
+                            <select name="user_type" class="form-control mr-10" aria-label="Default select example">
+                                <option selected>----ACCOUNT TYPE----</option>
+                                <option  value="2">Sponsor</option>
+                                <option value="3">Guidian</option>
+                              </select>
+                            @error('password_confirmation')
+                            <span class="invalid-feedback">{{$message}}</span>
+                            @enderror
+                          </div>
+                          
+        
+                        <div class="pt-1 mb-4">
+                          <button class="btn btn-dark btn-lg btn-block" type="submit">Create account</button>
+                        </div>
+      
+                        <a class="small text-muted" href="#!">Forgot password?</a>
+                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="{{ route('login')}}"
+                            style="color: #393f81;">Register here</a></p>
+                        <a href="#!" class="small text-muted">Terms of use.</a>
+                        <a href="#!" class="small text-muted">Privacy policy</a>
+                      </form>
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ url("admin_assets/vendor/jquery/jquery.min.js")}}"></script>
+    <script src="{{ url("admin_assets/vendor/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{ url("admin_assets/vendor/jquery-easing/jquery.easing.min.js")}}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{ url("admin_assets/js/sb-admin-2.min.js")}}"></script>
+
+</body>
+
+</html>

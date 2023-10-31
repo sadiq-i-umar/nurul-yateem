@@ -29,5 +29,12 @@ class Guidian extends Model
             'other_information',
             'affidavit',
     ];
+
+    static public function getGuidian () {
+
+        return self::select('guidians.*')
+                    ->orderBy('id', 'asc')
+                    ->get();
+    }
 }
 

@@ -3,7 +3,7 @@
 @section('title', '')
   
 @section('contents')
-    <h1 class="mb-0">Sponsor List</h1>
+    <h1 class="mb-0">Orphan List</h1>
     
     <hr />
 
@@ -17,7 +17,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div class="col-dm-6 mx-2" style="text-align: right;">
-                <a href="{{ url('/sponsor/create')}}" class="btn btn-primary">Add new Sponsor</a>
+             
               </div>
         </div>
         <div class="card-body">
@@ -26,11 +26,10 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
                             <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Class</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                 
@@ -40,8 +39,16 @@
                             <td>System Architect</td>
                             <td>Edinburgh</td>
                             <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
+                            <td>
+
+                                <a href="" class="btn btn-secondary font-weight-bold  mr-4" data-toggle="tooltip" data-original-title="Edit user">
+                                    View
+                                    </a>
+                                  <a href="" class="btn btn-success font-weight-bold  mr-4 " data-toggle="tooltip" data-original-title="Edit user">
+                                  Sponsor
+                                  </a>
+                                  
+                            </td>
                         </tr>
    
                     </tbody>

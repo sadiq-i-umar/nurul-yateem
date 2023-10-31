@@ -106,13 +106,13 @@
   <li class="nav-item">
     <a class="nav-link" href="{{ route('sponsor/dashboard') }}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Sponsor Dashboard</span></a>
+      <span> Dashboard</span></a>
   </li>
   
   <li class="nav-item">
     <a class="nav-link"  href="{{ route('sponsor') }}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Sponsors Lists</span></a>
+      <span>Orphan Lists</span></a>
   </li>
 
   
@@ -158,20 +158,14 @@
   <li class="nav-item">
     <a class="nav-link" href="{{ route('guidian/dashboard') }}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Guidian Dashboard</span></a>
+      <span> Dashboard</span></a>
   </li>
 
-  <li class="nav-item">
-    <a class="nav-link" href="{{ route('guidian') }}">
-      <i class="fas fa-fw fa-folder"></i>
-      <span>Guidian List</span></a>
-  </li>
-  
 
   <!-- Divider -->
   <hr class="sidebar-divider d-none d-md-block">
   <li class="nav-item">
-    <a class="nav-link" href="{{route('profile')}}">
+    <a class="nav-link" href="{{route('guidian/profile')}}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Profile</span></a>
   </li>

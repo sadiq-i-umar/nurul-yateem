@@ -17,8 +17,9 @@ class AdminController extends Controller
      */
     public function guidianlist()
     {
-        $data['getRecord'] = User::getGuidian();
-        return view("admin.guidian.index",$data);
+        $data1['getRecord'] = User::getGuidian();
+        $data['getRecords'] = Guidian::getGuidian();
+        return view("admin.guidian.index",$data,$data1);
     }
     public function sponsorlist()
     {
@@ -60,7 +61,6 @@ class AdminController extends Controller
             'other_information'=> '',
             'affidavit'=> 'required',
             ])->validate();
-
                 Guidian::create([
                 'gender' => $request->gender,
                 'phone_number' => $request->phone_number,
@@ -82,9 +82,13 @@ class AdminController extends Controller
                 'affidavit' =>  $request->affidavit,
 
             ]);
-            return redirect()->route('admin/guidians    ')->with('success','');
+            return redirect()->route('admin/guidian/profile')->with('success','');
     }
-
+    public function profile()
+    {
+        $data['getRecords'] = Guidian::getGuidian();
+        return view("admin.guidian.profile", $data);
+    }
     /**
      * Store a newly created resource in storage.
      */

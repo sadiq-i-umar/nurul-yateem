@@ -1,75 +1,145 @@
 @extends('layouts.app')
 
-@section('title', 'Guidian')
+@section('title', 'Welcome ')
 
 
 @section('contents')
-<div class="row">
 
-{{-- 
-    <div class="container-fluid">
 
-        <!-- Page Heading -->
-       
-        <!-- Content Row -->
-        <div class="row">
-
-            <div class="col-xl-8 col-lg-7">
-
-                <!-- Area Chart -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary"> Users Chart</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-area">
-                            <canvas id="myAreaChart"></canvas>
-                        </div>
-                        <hr>
-                        Styling for the area chart can be found in the
-                        <code>/js/demo/chart-area-demo.js</code> file.
-                    </div>
-                </div>
-
-                <!-- Bar Chart -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Users Chart</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-bar">
-                            <canvas id="myBarChart"></canvas>
-                        </div>
-                        <hr>
-                        Styling for the bar chart can be found in the
-                        <code>/js/demo/chart-bar-demo.js</code> file.
-                    </div>
-                </div>
-
+<div class="main-panel">
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-md-12 grid-margin"  style="background-image:url('assets/img/people.svg');" >
+          <div class="row">
+            <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+              
+              <h6 class="font-weight-normal mb-0">To be able to add Orphans you need to complete your Profile Data <span class="text-primary" ><a style="text-decoration:none;" href="{{route('guidian/create')}}">Profile Upload!</a></span></h6>
             </div>
-
-            <!-- Donut Chart -->
-            <div class="col-xl-4 col-lg-5">
-                <div class="card shadow mb-4">
-                    <!-- Card Header - Dropdown -->
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Users  Chart</h6>
-                    </div>
-                    <!-- Card Body -->
-                    <div class="card-body">
-                        <div class="chart-pie pt-4">
-                            <canvas id="myPieChart"></canvas>
-                        </div>
-                        <hr>
-                        Styling for the donut chart can be found in the
-                        <code>/js/demo/chart-pie-demo.js</code> file.
-                    </div>
+            <div class="col-12 col-xl-4 mb-4">
+             <div class="justify-content-end d-flex">
+              <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
+                <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                 <i class="mdi mdi-calendar"></i> Today (10 Jan 2021)
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
+                  <a class="dropdown-item" href="#">January - March</a>
+                  <a class="dropdown-item" href="#">March - June</a>
+                  <a class="dropdown-item" href="#">June - August</a>
+                  <a class="dropdown-item" href="#">August - November</a>
                 </div>
+              </div>
+             </div>
             </div>
+          </div>
         </div>
-
-    </div> --}}
-    <!-- /.container-fluid -->
-
+      </div>
+      <div class="row">
+        <div class="col-md-6 grid-margin stretch-card mt-6">
+          <div class="card tale-bg">
+            <div class="card-people mt-auto">
+              <img src="{{url('assets/img/people.svg')}}" width="100%" height="100%" alt="people">
+          
+            </div>
+          </div>
+        </div>
+    
+        <div class="col-md-6 grid-margin stretch-card mb-4">
+            <div class="card">
+                <div class="card-body">
+                <p class="card-title mb-0">All Ophans</p>
+                <div class="table-responsive">
+                    <table class="table table-striped table-borderless">
+                    <thead>
+                        <tr>
+                        <th>Names</th>
+                        <th>Age</th>
+                        <th>DOB</th>
+                        <th>Status</th>
+                        </tr>  
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td> Full Name </td>
+                        <td class="font-weight-bold">10</td>
+                        <td>21 Sep 2018</td>
+                        <td class="font-weight-medium"><div class="badge badge-success">Active</div></td>
+                        </tr>
+                        <tr>
+                            <td> Full Name </td>
+                            <td class="font-weight-bold">10</td>
+                        <td>13 Jun 2018</td>
+                        <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                        </tr>
+                        <tr>
+                            <td> Full Name </td>
+                            <td class="font-weight-bold">10</td>
+                        <td>28 Sep 2018</td>
+                        <td class="font-weight-medium"><div class="badge badge-warning">Pending</div></td>
+                        </tr>
+                        <tr>
+                            <td> Full Name </td>
+                            <td class="font-weight-bold">10</td>
+                        <td>30 Jun 2018</td>
+                        <td class="font-weight-medium"><div class="badge badge-warning">Pending</div></td>
+                        </tr>
+                        <tr>
+                            <td> Full Name </td>
+                            <td class="font-weight-bold">10</td>
+                        <td>01 Nov 2018</td>
+                        <td class="font-weight-medium"><div class="badge badge-danger">Cancelled</div></td>
+                        </tr>
+                        <tr>
+                            <td> Full Name </td>
+                            <td class="font-weight-bold">10</td>
+                        <td>20 Mar 2018</td>
+                        <td class="font-weight-medium"><div class="badge badge-warning">Pending</div></td>
+                        </tr>
+                        <tr>
+                            <td> Full Name </td>
+                            <td class="font-weight-bold">10</td>
+                        <td>26 Oct 2018</td>
+                        <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+            </div>
+        
+      </div>
+   
+  
+ 
+      <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-title">Advanced Table</p>
+              <div class="row">
+                <div class="col-12">
+                  <div class="table-responsive">
+                    <table id="example" class="display expandable-table" style="width:100%">
+                      <thead>
+                        <tr>
+                          <th>Quote#</th>
+                          <th>Product</th>
+                          <th>Business type</th>
+                          <th>Policy holder</th>
+                          <th>Premium</th>
+                          <th>Status</th>
+                          <th>Updated at</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                  </table>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
 </div>
 @endsection
