@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Guidian;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -64,7 +66,8 @@ class AuthController extends Controller
         }
         else if (Auth::user()->user_type == 3) 
         {
-            return redirect()->route('guidian/dashboard');
+            $profile = Guidian::all();
+            return redirect()->route('guidian/dashboard' , compact('profile'));
         }
         
     }

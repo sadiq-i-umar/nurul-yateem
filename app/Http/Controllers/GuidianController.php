@@ -22,6 +22,12 @@ class GuidianController extends Controller
     {
         return view("guidian.create");
     }
+
+    public function createOrphans()
+    {
+        return view("guidian.addOrphan");
+    }
+    
     public function registerSave (Request $request) {
         Validator::make($request->all(), [
             'gender' => 'required',

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Guidian;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 class DashboardController extends Controller
@@ -18,7 +19,8 @@ class DashboardController extends Controller
         }
         else if (Auth::user()->user_type == 3) 
         {
-            return view('guidian.dashboard');
+            $profile = Guidian::all();
+            return view('guidian.dashboard', compact('profile'));
         }
     }
 }

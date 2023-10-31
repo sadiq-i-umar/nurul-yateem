@@ -35,6 +35,11 @@ class AdminController extends Controller
       
         return view("admin.guidian.create", );
     }
+    public function  createOrphans()
+    {
+        return view("admin.guidian.createorphan");
+    }
+ 
     public function sponsorcreate()
     {
         return view("admin.guidian.create");

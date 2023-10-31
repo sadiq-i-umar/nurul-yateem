@@ -44,7 +44,7 @@
                             <td>{{ $value->lastname }}</td>
                             <td>{{ $value->email }}</td>
                        <td class="text-center">
-                        <a href="{{ url('admin/guidian/view/'.$value->id)}}" class="btn btn-secondary font-weight-bold  mr-4" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="{{ url('admin/guidian/profile')}}" class="btn btn-secondary font-weight-bold  mr-4" data-toggle="tooltip" data-original-title="Edit user">
                             View
                             </a>
                           <a href="{{ url('admin/guidian/edit/'.$value->id)}}" class="btn btn-success font-weight-bold  mr-4 " data-toggle="tooltip" data-original-title="Edit user">

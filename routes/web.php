@@ -53,6 +53,7 @@ Route::middleware('admin')->group(function () {
     Route::get('admin/guidian/profile', [App\Http\Controllers\AdminController::class,'profile'])->name('admin/guidian/profile'); 
     Route::get('admin/sponsor/create', [App\Http\Controllers\AdminController::class,'sponsorcreate'])->name('admin/sponsor/create');
     Route::post('registersave', [App\Http\Controllers\AdminController::class,'registerSave'])->name('guidian.register.save');
+    Route::get('admin/create/orphans', [App\Http\Controllers\AdminController::class,'createOrphans'])->name('admin/create/orphans'); 
   
 });
 
@@ -62,10 +63,6 @@ Route::middleware('sponsor')->group(function () {
     Route::get('sponsor/dashboard', [App\Http\Controllers\DashboardController::class,'dashboard'])->name('sponsor/dashboard'); 
     Route::get('/sponsor', [App\Http\Controllers\SponsorController::class,'index'])->name('sponsor'); 
     Route::get('/sponsor/create', [App\Http\Controllers\SponsorController::class,'create'])->name('create');
-    // Route::get('/guidian', [App\Http\Controllers\GuidianController::class,'index'])->name('guidian'); 
-    // Route::get('/guidian/create', [App\Http\Controllers\GuidianController::class,'create'])->name('create'); 
-    // Route::get('/sponsor', [App\Http\Controllers\SponsorController::class,'index'])->name('sponsor'); 
-    // Route::get('/sponsor/create', [App\Http\Controllers\SponsorController::class,'create'])->name('create');
 });
 
 
@@ -75,12 +72,8 @@ Route::middleware('guidian')->group(function () {
     Route::get('guidian/create', [App\Http\Controllers\GuidianController::class,'create'])->name('guidian/create'); 
     Route::get('guidian/profile', [App\Http\Controllers\GuidianController::class,'profile'])->name('guidian/profile'); 
     Route::post('saveregister', [App\Http\Controllers\GuidianController::class,'registerSave'])->name('save.guidian.register');
-    // Route::get('/profile', [App\Http\Controllers\AuthController::class,'profile'])->name('profile'); 
-    // Route::get('/settings', [App\Http\Controllers\AuthController::class,'settings'])->name('settings'); 
-    // Route::get('/guidian', [App\Http\Controllers\GuidianController::class,'index'])->name('guidian'); 
-    // Route::get('/guidian/create', [App\Http\Controllers\GuidianController::class,'create'])->name('create'); 
-    // Route::get('/sponsor', [App\Http\Controllers\SponsorController::class,'index'])->name('sponsor'); 
-    // Route::get('/sponsor/create', [App\Http\Controllers\SponsorController::class,'create'])->name('create');
+    Route::get('guidian/create/orphans', [App\Http\Controllers\GuidianController::class,'createOrphans'])->name('guidian/create/orphans'); 
+   
 });
 
 
