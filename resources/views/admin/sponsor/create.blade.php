@@ -8,76 +8,84 @@
  
 
 <div class="tab-pane mx-4 mt-4" id="settings">
-    <form class="form-horizontal">
+    <form class="form-horizontal" action=" {{ route('sponsor.register.save')}}" method="POST">
+        @csrf 
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error )
+                <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+
+        @endif
         <div class="form-group row">
                 <label for="inputName" class="col-sm-2 col-form-label">First Name</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputName" placeholder="Firstname">
+                    <input type="text" name="firstname" class="form-control  @error('firstname')is-invalid @enderror" id="inputName" placeholder="Firstname">
+                    @error('firstname')
+                    <span class="invalid-feedback">{{$message}}</span>
+                    @enderror
                 </div>
         </div>
         <div class="form-group row">
             <label for="inputName" class="col-sm-2 col-form-label">Last Name</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputName" placeholder="Lastname">
+                <input type="text" name="lastname" class="form-control @error('lastname')is-invalid @enderror" id="inputName" placeholder="Lastname">
+                @error('lastname')
+                <span class="invalid-feedback">{{$message}}</span>
+                @enderror
             </div>
          </div>
          <div class="form-group row">
             <label for="inputName" class="col-sm-2 col-form-label">Other Name</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputName" placeholder="Lastname">
+                <input type="text" name="othername" class="form-control @error('othername')is-invalid @enderror" id="inputName" placeholder="Lastname">
+                @error('othername')
+                <span class="invalid-feedback">{{$message}}</span>
+                @enderror
             </div>
          </div>
         <div class="form-group row">
                 <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    <input type="email" name="email" class="form-control @error('email')is-invalid @enderror" id="inputEmail" placeholder="Email">
+                    @error('email')
+                    <span class="invalid-feedback">{{$message}}</span>
+                    @enderror
                 </div>
         </div>
 
-        <div class="form-group row">
-            <label for="inputEmail" class="col-sm-2 col-form-label">Gender</label>
-            <div class="col-sm-10">
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>--------</option>
-                    <option  value="1">Female</option>
-                    <option value="2">Male</option>
-                    <option value="3">Others</option>
-                  </select>
-            </div>
-    </div>  
+ 
     <div class="form-group row">
         <label for="number" class="col-sm-2 col-form-label">Phone  Number</label>
         <div class="col-sm-10">
-            <input type="number" class="form-control" id="inputName2" placeholder="+234 123456789" >
+            <input type="number" name="phone_number" class="form-control @error('phone_number')is-invalid @enderror" id="inputName2" placeholder="+234 123456789" >
+            @error('phone_number')
+            <span class="invalid-feedback">{{$message}}</span>
+            @enderror
         </div>
 </div>
 <div class="form-group row">
     <label for="inputName" class="col-sm-2 col-form-label">Password</label>
     <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputName" placeholder="password">
+        <input type="password" name="password" class="form-control @error('password')is-invalid @enderror" id="inputName" placeholder="password">
+        @error('password')
+        <span class="invalid-feedback">{{$message}}</span>
+        @enderror
     </div>
  </div>
- <div class="form-group row">
-    <div class="offset-sm-2 col-sm-10">
-        <div class="checkbox">
-            <label>
-            <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-        </label>
-        </div>
-    </div>
-</div>
-<div class="form-group row">
-    <div class="offset-sm-2 col-sm-10">
-        <button type="submit" style="width: 50%" class="btn btn-primary btn-lg">Submit</button>
+
+<div class="form-group row mt-3">
+    <div class="offset-sm-2 col-sm-10 mt-3">
+        <button type="submit" style="width: 100%" class="btn btn-primary btn-lg">Submit</button>
     </div>
 </div>
 
     <hr style="margin: 40px 0 40px 0" />
     
 {{-- Second Phase --}}
-
-
-   
 
     </form>
 </div>

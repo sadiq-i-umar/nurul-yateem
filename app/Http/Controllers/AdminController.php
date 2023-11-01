@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Guidian;
+use App\Models\Ophans;
+use App\Models\Sponsor;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -26,6 +28,12 @@ class AdminController extends Controller
         $data['getRecord'] = User::getSponsor();
         return view("admin.sponsor.index", $data);
     }
+    public function orphanlist()
+    {
+        $data['getRecord'] = User::getSponsor();
+        return view("admin.orphan.index", $data);
+    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -42,7 +50,7 @@ class AdminController extends Controller
  
     public function sponsorcreate()
     {
-        return view("admin.guidian.create");
+        return view("admin.sponsor.create");
     }
     public function registerSave(Request $request) 
     {
@@ -88,6 +96,65 @@ class AdminController extends Controller
 
             ]);
             return redirect()->route('admin/guidian/profile')->with('success','');
+    }
+    public function sponsorSave(Request $request) 
+    {
+        Validator::make($request->all(), [
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'othername' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'phone_number' => 'required',
+            ])->validate();
+                Sponsor::create([
+                'firstname' => $request->firstname,
+                'lastname' => $request->lastname,
+                'othername' => $request->othername,
+                'email' => $request->email,
+                'password' => $request->password,
+                'phone_number' => $request->phone_number,
+              
+
+            ]);
+            return redirect()->route('admin/sponsor')->with('success','');
+    }
+    public function orphansave(Request $request) 
+    {
+        Validator::make($request->all(), [
+            'firstname' => 'required',
+            'midname' => 'required',
+            'lastname' => 'required',
+            'gender' => $request->gender,
+            'dob' => $request->dob,
+            'alt_phn_number' => $request->alt_phn_number,
+            'profile_img' => $request->profile_img,
+            'employment_status' =>  $request->employment_status,
+            'annual_income' =>  $request->annual_income,
+            'nature_of_occupation' =>  $request->nature_of_occupation,
+            'employer_name' =>  $request->employer_name,
+            'employer_address' =>  $request->employer_address,
+            'employer_phone' =>  $request->employer_phone,
+            'mean_of_identity' =>  $request->mean_of_identity,
+            'identity_number' =>  $request->identity_number,
+            'id_issue_date' =>  $request->id_issue_date,
+            'id_expiry_date' =>  $request->id_expiry_date,
+            'marital_status' =>  $request->marital_status,
+            'other_information' =>  $request->other_information,
+            'affidavit' =>  $request->affidavit,     
+            ])->validate();
+            
+                Ophans::create([
+                'firstname' => $request->firstname,
+                'lastname' => $request->lastname,
+                'othername' => $request->othername,
+                'email' => $request->email,
+                'password' => $request->password,
+                'phone_number' => $request->phone_number,
+              
+
+            ]);
+            return redirect()->route('admin/Orphan')->with('success','');
     }
     public function profile()
     {

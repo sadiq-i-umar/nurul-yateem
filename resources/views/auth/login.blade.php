@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Nurul Yateem foundation</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ url("admin_assets/vendor/fontawesome-free/css/all.min.css")}}" rel="stylesheet" type="text/css">
@@ -112,10 +112,9 @@
               <div class="card" style="border-radius: 1rem;">
                 <div class="row g-0">
                   <div class="col-md-6 col-lg-5 d-none d-md-block">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
-                      alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                    
                   </div>
-                  <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                  <div class="col-md-6 col-lg-12 d-flex align-items-center">
                     <div class="card-body p-4 p-lg-5 text-black">
       
                       <form action="{{route('login.action')}}" method="POST" class="user">
@@ -135,8 +134,8 @@
                         @endif
       
                         <div class="d-flex align-items-center mb-3 pb-1">
-                          <i class="fas fa-cubes fa-2x me-3" style="color: #26a300;"></i>
-                          <span class="h1 fw-bold mb-0">Nurul Yateem</span>
+                         
+                          <span class="h1 fw-bold mb-0 text-center">Nurul Yateem Foundation</span>
                         </div>
       
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
@@ -158,7 +157,7 @@
                         </div>
       
                         <div class="pt-1 mb-4">
-                          <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+                          <button class="btn btn-primary   btn-lg btn-block" type="submit">Login</button>
                         </div>
       
                         <a class="small text-muted" href="#!">Forgot password?</a>

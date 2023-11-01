@@ -81,7 +81,7 @@
                 <option  value="1">Employed</option>
                 <option value="2">Unemployed</option>
                 <option value="3">Selfemployed</option>
-              </select>
+            </select>
         </div>
 </div>
 <div class="form-group row">

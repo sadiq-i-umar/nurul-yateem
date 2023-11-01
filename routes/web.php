@@ -47,14 +47,16 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::middleware('admin')->group(function () {
     Route::get('admin/dashboard', [App\Http\Controllers\DashboardController::class,'dashboard'])->name('admin/dashboard');  
+    Route::get('admin/sponsor', [App\Http\Controllers\AdminController::class,'sponsorlist'])->name('admin/sponsor'); 
+    Route::get('admin/sponsor/create', [App\Http\Controllers\AdminController::class,'sponsorcreate'])->name('admin/sponsor/create');
+    Route::post('sponsorsave', [App\Http\Controllers\AdminController::class,'sponsorSave'])->name('sponsor.register.save');
     Route::get('admin/guidian', [App\Http\Controllers\AdminController::class,'guidianlist'])->name('admin/guidian'); 
     Route::get('admin/guidian/create', [App\Http\Controllers\AdminController::class,'guidiancreate'])->name('admin/guidian/create'); 
-    Route::get('admin/sponsor', [App\Http\Controllers\AdminController::class,'sponsorlist'])->name('admin/sponsor'); 
     Route::get('admin/guidian/profile', [App\Http\Controllers\AdminController::class,'profile'])->name('admin/guidian/profile'); 
-    Route::get('admin/sponsor/create', [App\Http\Controllers\AdminController::class,'sponsorcreate'])->name('admin/sponsor/create');
     Route::post('registersave', [App\Http\Controllers\AdminController::class,'registerSave'])->name('guidian.register.save');
+    Route::get('admin/orphan', [App\Http\Controllers\AdminController::class,'orphanlist'])->name('admin/orphan'); 
     Route::get('admin/create/orphans', [App\Http\Controllers\AdminController::class,'createOrphans'])->name('admin/create/orphans'); 
-  
+    Route::post('orphansave', [App\Http\Controllers\AdminController::class,'orphansave'])->name('orphan.register.save');
 });
 
 
