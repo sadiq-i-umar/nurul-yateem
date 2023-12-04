@@ -120,7 +120,7 @@
                     </button>
                 </div>
                 <div>
-                  <p class="txt1"> Already Have an account?  <a href="{{ route('login')}}" class="txt1 ">
+                  <p class="txt1"> Already Have an account?  <a href="{{ route('/')}}" class="txt1 ">
                     Login to your accont
                    </a></p>
                  

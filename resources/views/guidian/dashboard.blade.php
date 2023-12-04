@@ -12,7 +12,7 @@
         <div class="col-md-12 grid-margin"  style="background-image:url('assets/img/people.svg');" >
           <div class="row">
             <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-              @if(!$profile->isEmpty())
+              @if($profile->isEmpty())
               <h6 class="font-weight-normal mb-0">To be able to add Orphans you need to complete your Profile Data <span class="text-primary" ><a style="text-decoration:none;" href="{{route('guidian/create')}}">Profile Upload!</a></span></h6>
               @endif
             </div>

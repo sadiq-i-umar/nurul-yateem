@@ -17,15 +17,15 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::controller(AuthController::class)->group(function () {   
     Route::get('register', 'register')->name('register');
     Route::post('register','registerSave')->name('register.save');
 
-    Route::get('login','login')->name('login');
+    Route::get('/','login')->name('/');
     Route::post('login','loginAction')->name('login.action');
     
 
