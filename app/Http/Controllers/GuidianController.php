@@ -20,7 +20,11 @@ class GuidianController extends Controller
      */
     public function create()
     {
-        return view("guidian.create");
+        if (Guidian::count() > 0) {
+            return redirect()->route('guidian/dashboard');
+        } else {
+            return view("guidian.create");
+        }
     }
 
     public function createOrphans()
@@ -71,11 +75,24 @@ class GuidianController extends Controller
                 'affidavit' =>  $request->affidavit,
 
             ]);
-            return redirect()->route('guidian/profile')->with('success','');
+            // return redirect()->route('guidian/profile')->with('success','');
+            return redirect()->route('guidian.success')->with('success','');
     }
     public function profile()
     {
         return view("guidian.profile");
+    }
+
+    public function success() {
+        if (Guidian::count() > 0) {
+            if ( !request()->is('/success') && url()->previous() !=  url('guidian/create') ) {
+                return redirect()->to('guidian/dashboard'); //Send them somewhere else
+            } else {
+                return view("guidian.completeaccountsuccess");
+            }
+        } else {
+            return view("guidian.create");
+        }
     }
 
     /**

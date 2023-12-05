@@ -32,7 +32,7 @@ class AuthController extends Controller
                 'password' => Hash::make($request->password),
                 'user_type' =>  $request->user_type,
             ]);
-            return redirect()->route('login')->with('success','');
+            return redirect()->route('/')->with('success','');
     }
 
     public function login()
@@ -77,7 +77,7 @@ class AuthController extends Controller
   
         $request->session()->invalidate();
   
-        return redirect('/login');
+        return redirect('/');
     }
     public function profile()
     {

@@ -17,15 +17,15 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::controller(AuthController::class)->group(function () {   
     Route::get('register', 'register')->name('register');
     Route::post('register','registerSave')->name('register.save');
 
-    Route::get('login','login')->name('login');
+    Route::get('/','login')->name('/');
     Route::post('login','loginAction')->name('login.action');
     
 
@@ -75,7 +75,7 @@ Route::middleware('guidian')->group(function () {
     Route::get('guidian/profile', [App\Http\Controllers\GuidianController::class,'profile'])->name('guidian/profile'); 
     Route::post('saveregister', [App\Http\Controllers\GuidianController::class,'registerSave'])->name('save.guidian.register');
     Route::get('guidian/create/orphans', [App\Http\Controllers\GuidianController::class,'createOrphans'])->name('guidian/create/orphans'); 
-   
+    Route::get('guidian/success', [App\Http\Controllers\GuidianController::class,'success'])->name('guidian.success'); 
 });
 
 
@@ -94,3 +94,7 @@ Route::middleware('guidian')->group(function () {
         // Route::get('guidian/dashboard', function () {
     //     return view('dashboard');
     // })->name('guidian/dashboard');   
+
+
+
+    
